@@ -37,6 +37,8 @@ public class Main {
         }
 
         return 4;
+
+
     }
 
     public static int calculateScore(boolean gameOver, int score, int lvlCompleted, int bonus) {

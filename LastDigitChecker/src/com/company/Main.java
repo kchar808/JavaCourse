@@ -21,7 +21,7 @@ public class Main {
     }
 
     public static boolean isValid(int number) {
-        if(number >= 10 || number <= 1000) {
+        if(number >= 10 && number <= 1000) {
             return true;
         }
         return false;

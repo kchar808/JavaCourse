@@ -19,11 +19,12 @@ public class Main {
             } else {
                 System.out.println("Not a valid number.");
             }
-            scanner.nextLine(); // handles end of line (enter key)
+            scanner.nextLine(); // handle end of line (enter key)
         }
-
+        
+        System.out.println("Your sum is " + sum);
         scanner.close();
 
-        System.out.println("Your sum is " + sum);
+
     }
 }

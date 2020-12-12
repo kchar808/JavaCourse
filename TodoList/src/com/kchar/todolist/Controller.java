@@ -1,5 +1,6 @@
 package com.kchar.todolist;
 
+import com.kchar.todolist.datamodel.TodoData;
 import com.kchar.todolist.datamodel.TodoItem;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -29,19 +30,21 @@ public class Controller {
     private Label deadlineLabel;
 
     public void initialize() {
-        TodoItem item1 = new TodoItem("Mail birthday card", "Buy bday card for Jake",
-                LocalDate.of(2021, Month.FEBRUARY, 23));
-        TodoItem item2 = new TodoItem("Doctors appt", "Appointment with dr. mcdouble @ mcdonalds", LocalDate.of(2021, Month.JANUARY, 12));
-        TodoItem item3 = new TodoItem("It's mah birthday", "Throw a fat party",
-                LocalDate.of(2020, Month.DECEMBER, 8));
-        TodoItem item4 = new TodoItem("Order pizza", "Order pepperoni pizza from Dominos",
-                LocalDate.of(2021, Month.MARCH, 5));
-
-        todoItems = new ArrayList<TodoItem>();
-        todoItems.add(item1);
-        todoItems.add(item2);
-        todoItems.add(item3);
-        todoItems.add(item4);
+//        TodoItem item1 = new TodoItem("Mail birthday card", "Buy bday card for Jake",
+//                LocalDate.of(2021, Month.FEBRUARY, 23));
+//        TodoItem item2 = new TodoItem("Doctors appt", "Appointment with dr. mcdouble @ mcdonalds", LocalDate.of(2021, Month.JANUARY, 12));
+//        TodoItem item3 = new TodoItem("It's mah birthday", "Throw a fat party",
+//                LocalDate.of(2020, Month.DECEMBER, 8));
+//        TodoItem item4 = new TodoItem("Order pizza", "Order pepperoni pizza from Dominos",
+//                LocalDate.of(2021, Month.MARCH, 5));
+//
+//        todoItems = new ArrayList<TodoItem>();
+//        todoItems.add(item1);
+//        todoItems.add(item2);
+//        todoItems.add(item3);
+//        todoItems.add(item4);
+//
+//        TodoData.getInstance().setTodoItems(todoItems);
 
         todoListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<TodoItem>() {
             @Override
@@ -57,7 +60,7 @@ public class Controller {
             }
         });
 
-        todoListView.getItems().setAll(todoItems);
+        todoListView.getItems().setAll(TodoData.getInstance().getTodoItems());
         todoListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         todoListView.getSelectionModel().selectFirst();
     }
